@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cepas de Junín — Lotes desde USD 15.000</title>
+<meta name="description" content="Urbanización entre fincas en Junín, Mendoza. Lotes desde 400m², con servicios de agua y luz, seguridad privada 24hs y financiación en USD.">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind (utilidades CSS) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Iconos -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<link rel="icon" href="images/logo.jpg">
+
+<style>
+  html { scroll-behavior: smooth; }
+  h1,h2,h3,.font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  [data-lucide] { display: inline-block; }
+</style>
+</head>
+
+<body class="min-h-screen w-full max-w-full bg-[#FDFBF7] text-[#2D3A2E] overflow-x-hidden">
+
+<!-- ======================= HEADER ======================= -->
+<header class="sticky top-0 z-40 backdrop-blur-xl bg-white/92 border-b border-[#E8DDD0] shadow-[0_4px_24px_rgba(92,59,111,0.06)]">
+  <div class="mx-auto max-w-[1200px] px-5 lg:px-8 h-[72px] flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <img src="images/logo.jpg" alt="Cepas de Junín - Urbanización entre fincas" class="h-[50px] w-auto object-contain">
+      <span class="hidden sm:inline-flex ml-2 px-3 py-1 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] text-[11px] tracking-wide uppercase text-[#8C7D6C] font-medium">Junín — Mendoza</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[11px] text-[#5C3B6F] uppercase tracking-wide font-medium">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#5C3B6F] animate-pulse"></span> Lotes desde USD 15.000
+      </span>
+      <a href="#" class="wsp-link" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] text-white text-[13.5px] font-medium shadow-[0_8px_24px_rgba(37,211,102,0.25)] hover:brightness-[1.05] transition">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">WhatsApp</span>
+        <span class="sm:hidden">Hablar</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Aviso flotante al hacer scroll al formulario -->
+<div id="scrollToast" class="hidden fixed top-[84px] left-1/2 -translate-x-1/2 z-[60] px-4 py-2 rounded-full bg-[#2D3A2E] text-white text-[13px] font-medium shadow-[0_12px_32px_rgba(0,0,0,0.25)] items-center gap-2">
+  <i data-lucide="arrow-right" class="w-4 h-4 rotate-90"></i> Llevándote al formulario...
+</div>
+
+<!-- ======================= HERO ======================= -->
+<section class="relative overflow-hidden w-full max-w-full min-h-[760px] lg:min-h-[820px] flex items-center">
+  <div class="absolute inset-0">
+    <img src="images/hero-ingreso.jpg" alt="Ingreso Barrio Cepas de Junín - muro de gaviones" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/35"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#5C3B6F]/25 to-transparent mix-blend-multiply"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-[1200px] px-5 lg:px-8 py-12 lg:py-16 w-full grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-12 items-center">
+    <div class="pt-2 lg:pt-4 text-white">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur border border-white/20 shadow-sm text-[11px] tracking-[0.14em] uppercase font-medium">
+        <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+        Portal de ingreso con seguridad 24hs - Junín, Mendoza
+      </div>
+
+      <h1 class="mt-6 font-serif text-[38px] lg:text-[60px] leading-[0.92] tracking-[-0.02em] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)]">
+        Tu lote de 400m²<br>
+        <span class="italic font-normal text-[#F5E6D3]">desde USD 15.000 en Junín</span>
+      </h1>
+
+      <p class="mt-5 text-[16px] lg:text-[17px] leading-7 text-white/90 max-w-[540px] drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)]">
+        Urbanización entre fincas sobre Carril del Centro, entre Santos Lugares y Olivares. Con servicios de agua y luz, espacios verdes y seguridad privada. A 9 min de Junín, 10 min de Rivadavia y 17 min de San Martín. Acceso por Acceso Este y Ruta 60.
+      </p>
+
+      <div class="mt-8 grid gap-3 max-w-[460px]">
+        <div class="flex items-center gap-3 text-[14.5px] text-white/95">
+          <div class="w-8 h-8 rounded-full bg-white/15 backdrop-blur border border-white/20 text-white grid place-items-center shrink-0"><i data-lucide="dollar-sign" class="w-4 h-4"></i></div>
+          Desde USD 15.000 - Financiación en USD
+        </div>
+        <div class="flex items-center gap-3 text-[14.5px] text-white/95">
+          <div class="w-8 h-8 rounded-full bg-white/15 backdrop-blur border border-white/20 text-white grid place-items-center shrink-0"><i data-lucide="compass" class="w-4 h-4"></i></div>
+          Lotes de 402m² y 409m², orientación Este/Oeste
+        </div>
+        <div class="flex items-center gap-3 text-[14.5px] text-white/95">
+          <div class="w-8 h-8 rounded-full bg-white/15 backdrop-blur border border-white/20 text-white grid place-items-center shrink-0"><i data-lucide="file-check" class="w-4 h-4"></i></div>
+          Escritura al finalizar la urbanización
+        </div>
+      </div>
+
+      <div class="mt-10 flex items-center gap-4">
+        <img src="images/avatar-ingreso-alt.jpg" alt="Ingreso alternativo" class="w-10 h-10 rounded-full object-cover border-2 border-white/30 shadow-lg">
+        <p class="text-[13px] leading-5 text-white/75">
+          Carril del Centro entre Santos Lugares y Olivares<br>
+          <b class="text-white/90">Acceso por Acceso Este y Ruta 60</b>
+        </p>
+      </div>
+      <div class="mt-6 hidden lg:flex items-center gap-2 text-[11px] text-white/60">
+        <i data-lucide="camera" class="w-4 h-4"></i> Ingreso icónico - muro de gaviones • Cepas de Junín
+      </div>
+    </div>
+
+    <!-- ======================= FORMULARIO DE CONTACTO ======================= -->
+    <div id="formAnchor" class="relative w-full max-w-full">
+      <div class="absolute -inset-3 -z-10 rounded-[28px] bg-white/10 blur-xl pointer-events-none"></div>
+      <div id="formCard" class="rounded-[24px] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.25)] border border-[#E8DDD0] p-6 lg:p-8 transition-all duration-300">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-serif text-[28px] leading-none text-[#2D3A2E]">Recibí info exclusiva</h3>
+            <p class="mt-2 text-[13.5px] text-[#8C7D6C]">Plano, precios en USD y financiación</p>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#5C3B6F]"></i>
+          </div>
+        </div>
+
+        <!-- PASO 1: Formulario de captura rápida -->
+        <form id="leadForm" class="mt-6 grid gap-4 transition-all duration-300">
+          <label class="grid gap-1.5">
+            <span class="text-[12px] tracking-wide uppercase text-[#8C7D6C]">Nombre</span>
+            <input id="fNombre" name="nombre" placeholder="Ej: Lucas Pérez" required
+              class="h-12 rounded-2xl border border-[#E8DDD0] bg-[#FDFBF7] px-4 text-[15px] outline-none focus:ring-2 focus:ring-[#5C3B6F]/15 focus:border-[#5C3B6F]/30 transition">
+          </label>
+          <label class="grid gap-1.5">
+            <span class="text-[12px] tracking-wide uppercase text-[#8C7D6C]">WhatsApp</span>
+            <input id="fWhatsapp" name="whatsapp" placeholder="Ej: 2634 123456" inputmode="tel" required
+              class="h-12 rounded-2xl border border-[#E8DDD0] bg-[#FDFBF7] px-4 text-[15px] outline-none focus:ring-2 focus:ring-[#5C3B6F]/15 focus:border-[#5C3B6F]/30 transition">
+          </label>
+
+          <!-- Campos ocultos de UTM -->
+          <input type="hidden" name="utm_source" id="fUtmSource">
+          <input type="hidden" name="utm_medium" id="fUtmMedium">
+          <input type="hidden" name="utm_campaign" id="fUtmCampaign">
+          <input type="hidden" name="utm_content" id="fUtmContent">
+          <input type="hidden" name="fbclid" id="fFbclid">
+          <input type="hidden" name="pagina" value="Cepas de Junín - Landing">
+
+          <button type="submit" id="submitBtn1"
+            class="mt-2 h-[52px] rounded-2xl bg-[#C86A4A] text-white font-medium text-[15.5px] shadow-[0_12px_24px_rgba(200,106,74,0.35)] hover:brightness-[1.06] active:scale-[0.99] transition flex items-center justify-center gap-2">
+            Continuar <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </form>
+
+        <!-- PASO 2: Preguntas de calificación (Oculto inicialmente) -->
+        <div id="step2Box" class="hidden mt-2 transition-all duration-300">
+          <div class="mb-5 p-4 rounded-2xl bg-[#5C3B6F]/5 border border-[#5C3B6F]/10">
+            <h4 class="font-serif text-[22px] leading-tight text-[#2D3A2E]">¡Casi listo!</h4>
+            <p class="mt-1 text-[13px] text-[#8C7D6C]">Respondé 3 consultas rápidas para armar tu propuesta ideal a medida.</p>
+          </div>
+          
+          <form id="qualifyForm" class="grid gap-4">
+            <label class="grid gap-1.5">
+              <span class="text-[12px] tracking-wide uppercase text-[#8C7D6C]">¿Cuándo querés invertir?</span>
+              <select name="plazo" class="w-full h-11 rounded-xl border border-[#E8DDD0] bg-[#FDFBF7] px-4 text-[14px] outline-none focus:ring-2 focus:ring-[#5C3B6F]/15">
+                <option value="No definido">Seleccionar...</option>
+                <option value="En los próximos 30 días">En los próximos 30 días</option>
+                <option value="En los próximos 3 meses">En los próximos 3 meses</option>
+                <option value="Estoy explorando">Estoy explorando</option>
+              </select>
+            </label>
+            
+            <label class="grid gap-1.5">
+              <span class="text-[12px] tracking-wide uppercase text-[#8C7D6C]">Forma de pago preferida</span>
+              <select name="pago" class="w-full h-11 rounded-xl border border-[#E8DDD0] bg-[#FDFBF7] px-4 text-[14px] outline-none focus:ring-2 focus:ring-[#5C3B6F]/15">
+                <option value="No definido">Seleccionar...</option>
+                <option value="Contado">Contado (Mejor precio)</option>
+                <option value="Financiado">Financiado en cuotas</option>
+              </select>
+            </label>
+
+            <label class="grid gap-1.5">
+              <span class="text-[12px] tracking-wide uppercase text-[#8C7D6C]">Destino del lote</span>
+              <select name="uso" class="w-full h-11 rounded-xl border border-[#E8DDD0] bg-[#FDFBF7] px-4 text-[14px] outline-none focus:ring-2 focus:ring-[#5C3B6F]/15">
+                <option value="No definido">Seleccionar...</option>
+                <option value="Vivienda propia">Vivienda propia</option>
+                <option value="Inversión">Inversión a futuro</option>
+              </select>
+            </label>
+
+            <div class="mt-3 flex flex-col gap-3">
+              <button type="submit" id="submitBtn2"
+                class="h-[52px] rounded-2xl bg-[#5C3B6F] text-white font-medium text-[15.5px] shadow-[0_12px_24px_rgba(92,59,111,0.25)] hover:brightness-[1.06] transition flex items-center justify-center gap-2">
+                Ver info por WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </button>
+              <button type="button" id="skipBtn" class="text-[13px] text-[#8C7D6C] hover:text-[#2D3A2E] transition font-medium">
+                Saltar este paso e ir a WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Mensaje de agradecimiento (Oculto) -->
+        <div id="thanksBox" class="hidden mt-6 rounded-2xl bg-[#2D3A2E] text-[#FDFBF7] p-6">
+          <div class="w-10 h-10 rounded-full bg-white/10 grid place-items-center mb-4"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
+          <h4 class="font-serif text-[22px]">¡Gracias! Abriendo WhatsApp...</h4>
+          <p class="mt-2 text-[14px] text-white/70 leading-6">Si no se abre automáticamente, tocá el botón de abajo.</p>
+          <div class="mt-4 flex gap-2">
+            <a href="#" class="wsp-link px-4 py-2 rounded-full bg-white text-[#2D3A2E] text-[13px] font-medium" target="_blank" rel="noopener">Ir a WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-2 text-[11px] text-[#8C7D6C]">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Datos protegidos • Trato directo con desarrollador
+        </div>
+      </div>
+      <div class="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-white/70">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Financiación en USD
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FRANJA INFO ======================= -->
+<div class="border-y border-[#E8DDD0] bg-white/90 backdrop-blur">
+  <div class="mx-auto max-w-[1200px] px-5 lg:px-8 h-auto lg:h-[64px] py-4 lg:py-0 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:grid w-8 h-8 rounded-full bg-[#5C3B6F] text-white place-items-center"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
+      <p class="text-[14px]"><span class="font-semibold">Portal de ingreso con seguridad privada 24hs</span> • Carril del Centro, Junín</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-1 text-[12px] tracking-[0.12em] uppercase text-[#8C7D6C]">
+      <span class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#C86A4A]"></span> Lotes desde 400m²</span>
+      <span class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#C86A4A]"></span> Agua y luz • Calles con ripio</span>
+      <span class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#5C3B6F]"></span> Espacios verdes</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= BANNER SEGURIDAD ======================= -->
+<section class="relative w-full max-w-full overflow-hidden">
+  <div class="relative h-[380px] lg:h-[520px] w-full">
+    <img src="images/vista-general.jpg" alt="Avance de obra Cepas de Junín - vista panorámica" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="mx-auto max-w-[1200px] px-5 lg:px-8 w-full">
+        <div class="max-w-[520px] rounded-[24px] bg-white/10 backdrop-blur-xl border border-white/20 p-7 lg:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.25)]">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#5C3B6F] text-[11px] tracking-wide uppercase font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#C86A4A] animate-pulse"></span> Seguridad 24hs
+          </div>
+          <h2 class="mt-4 font-serif text-[32px] lg:text-[44px] leading-[0.95] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
+            Portal de ingreso<br><span class="italic text-[#F5E6D3]">con seguridad privada 24hs</span>
+          </h2>
+          <p class="mt-3 text-[14.5px] leading-6 text-white/80">Urbanización entre fincas con espacios verdes, servicios de agua y luz, calles con ripio y acceso controlado. Viví tranquilo a minutos de todo.</p>
+          <button type="button" data-scroll-form class="mt-5 h-11 px-5 rounded-full bg-white text-[#2D3A2E] text-[13.5px] font-medium inline-flex items-center gap-2 hover:bg-[#FDFBF7] transition">
+            Quiero conocer <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-4 right-5 lg:right-8">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur border border-white/20 text-[10px] tracking-wide uppercase text-white/70">
+        <i data-lucide="camera" class="w-3 h-3"></i> Foto real - Obra
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= POR QUÉ CEPAS DE JUNÍN ======================= -->
+<section class="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
+  <div class="max-w-[600px]">
+    <div class="inline-flex px-3 py-1 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[#5C3B6F] text-[11px] tracking-[0.14em] uppercase font-medium">Por qué Cepas de Junín</div>
+    <h2 class="mt-4 font-serif text-[36px] lg:text-[48px] leading-[0.95] tracking-[-0.02em]">Tranquilidad de barrio,<br><span class="italic text-[#5C3B6F]">seguridad y ubicación</span></h2>
+    <p class="mt-3 text-[15px] text-[#8C7D6C] leading-6">Carril del Centro entre Santos Lugares y Olivares. Accesibilidad por Acceso Este y Ruta 60.</p>
+  </div>
+
+  <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+    <div class="group rounded-[20px] bg-white border border-[#E8DDD0] p-6 hover:shadow-[0_16px_40px_rgba(92,59,111,0.12)] transition">
+      <div class="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center group-hover:bg-[#5C3B6F] group-hover:text-white transition"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 font-serif text-[19px] leading-tight">Portal de ingreso con seguridad privada 24hs</h3>
+      <p class="mt-2 text-[14px] leading-6 text-[#8C7D6C]">Acceso controlado con muro de gaviones icónico y vigilancia permanente.</p>
+    </div>
+    <div class="group rounded-[20px] bg-white border border-[#E8DDD0] p-6 hover:shadow-[0_16px_40px_rgba(92,59,111,0.12)] transition">
+      <div class="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center group-hover:bg-[#5C3B6F] group-hover:text-white transition"><i data-lucide="trees" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 font-serif text-[19px] leading-tight">Espacios verdes</h3>
+      <p class="mt-2 text-[14px] leading-6 text-[#8C7D6C]">Urbanización entre fincas, rodeado de verde y aire puro mendocino.</p>
+    </div>
+    <div class="group rounded-[20px] bg-white border border-[#E8DDD0] p-6 hover:shadow-[0_16px_40px_rgba(92,59,111,0.12)] transition">
+      <div class="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center group-hover:bg-[#5C3B6F] group-hover:text-white transition"><i data-lucide="droplet" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 font-serif text-[19px] leading-tight">Con servicios de agua y luz</h3>
+      <p class="mt-2 text-[14px] leading-6 text-[#8C7D6C]">Redes de agua y luz previstas para tu futura construcción.</p>
+    </div>
+    <div class="group rounded-[20px] bg-white border border-[#E8DDD0] p-6 hover:shadow-[0_16px_40px_rgba(92,59,111,0.12)] transition">
+      <div class="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center group-hover:bg-[#5C3B6F] group-hover:text-white transition"><i data-lucide="route" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 font-serif text-[19px] leading-tight">Calles con ripio</h3>
+      <p class="mt-2 text-[14px] leading-6 text-[#8C7D6C]">Trazado de calles con ripio, circulación interna simple y funcional.</p>
+    </div>
+    <div class="group rounded-[20px] bg-white border border-[#E8DDD0] p-6 hover:shadow-[0_16px_40px_rgba(92,59,111,0.12)] transition">
+      <div class="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center group-hover:bg-[#5C3B6F] group-hover:text-white transition"><i data-lucide="ruler" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 font-serif text-[19px] leading-tight">Lotes desde 400m² (402 y 409)</h3>
+      <p class="mt-2 text-[14px] leading-6 text-[#8C7D6C]">Lotes amplios, orientación Este u Oeste. Hay lotes más grandes disponibles.</p>
+    </div>
+    <div class="group rounded-[20px] bg-white border border-[#E8DDD0] p-6 hover:shadow-[0_16px_40px_rgba(92,59,111,0.12)] transition">
+      <div class="w-10 h-10 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center group-hover:bg-[#5C3B6F] group-hover:text-white transition"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 font-serif text-[19px] leading-tight">Ubicación: Carril del Centro / Acceso Este y Ruta 60</h3>
+      <p class="mt-2 text-[14px] leading-6 text-[#8C7D6C]">A 9 min de Junín, 10 min de Rivadavia y 17 min de San Martín.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= UBICACIÓN ======================= -->
+<section class="bg-[#2D3A2E] text-[#FDFBF7] relative overflow-hidden w-full max-w-full">
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:radial-gradient(circle at 1px 1px, white 1px, transparent 0);background-size:28px 28px"></div>
+  <div class="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative">
+    <div>
+      <div class="inline-flex px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] tracking-[0.14em] uppercase">Ubicación real</div>
+      <h2 class="mt-4 font-serif text-[36px] lg:text-[50px] leading-[0.9]">Portal de Ingreso con<br>Seguridad Privada las 24hs</h2>
+      <p class="mt-5 text-[16px] leading-7 text-white/70 max-w-[500px]">
+        Ubicado en <span class="text-white font-medium">Carril del Centro entre Santos Lugares y Olivares</span>, Junín, Mendoza. Accesibilidad directa por Acceso Este y Ruta 60. Con servicios de agua y luz, calles con ripio y espacios verdes.
+      </p>
+
+      <div class="mt-8 grid gap-3 max-w-[400px]">
+        <div class="flex items-center justify-between rounded-2xl bg-white/[0.06] border border-white/10 px-4 py-3">
+          <span class="text-[14px] flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 opacity-60"></i> Centro de Junín</span>
+          <span class="text-[13px] px-2.5 py-1 rounded-full bg-white text-[#2D3A2E] font-medium">9 minutos</span>
+        </div>
+        <div class="flex items-center justify-between rounded-2xl bg-white/[0.06] border border-white/10 px-4 py-3">
+          <span class="text-[14px] flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 opacity-60"></i> Rivadavia</span>
+          <span class="text-[13px] px-2.5 py-1 rounded-full bg-white text-[#2D3A2E] font-medium">10 minutos</span>
+        </div>
+        <div class="flex items-center justify-between rounded-2xl bg-white/[0.06] border border-white/10 px-4 py-3">
+          <span class="text-[14px] flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 opacity-60"></i> San Martín</span>
+          <span class="text-[13px] px-2.5 py-1 rounded-full bg-white text-[#2D3A2E] font-medium">17 minutos</span>
+        </div>
+      </div>
+
+      <div class="mt-6 rounded-2xl bg-white/[0.06] border border-white/10 p-4 text-[13px] leading-5 text-white/60">
+        <div class="flex items-center gap-2 text-white/90 font-medium mb-1"><i data-lucide="navigation" class="w-4 h-4"></i> Accesos</div>
+        Acceso Este y Ruta 60 • Carril del Centro entre Santos Lugares y Olivares
+      </div>
+
+      <div class="mt-8 flex gap-3 flex-wrap">
+        <button type="button" data-scroll-form class="h-11 px-5 rounded-full bg-white text-[#2D3A2E] text-[14px] font-medium inline-flex items-center gap-2">Quiero conocer <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+        <div class="h-11 px-4 rounded-full bg-white/10 border border-white/15 grid place-items-center text-[12px] text-white/70">Junín • Mendoza</div>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div class="relative overflow-hidden rounded-[24px]">
+      <div class="rounded-[24px] overflow-hidden bg-[#E8DDD0] border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.35)] max-w-full">
+        <div class="relative h-[420px] lg:h-[520px] w-full bg-[#E8DDD0]">
+          <iframe
+            class="absolute inset-0 w-full h-full border-0"
+            loading="lazy"
+            allowfullscreen=""
+            referrerpolicy="strict-origin-when-cross-origin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.3873785698893!2d-68.4292054!3d-33.1394421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e5b8a77818a01%3A0xd6d8568241abcedf!2sCepas%20de%20Junin!5e1!3m2!1ses-419!2sar!4v1785768806196!5m2!1ses-419!2sar">
+          </iframe>
+          <div class="pointer-events-none absolute left-4 bottom-4 right-4 flex justify-between items-end">
+            <div class="pointer-events-auto rounded-2xl bg-white/95 backdrop-blur px-4 py-3 shadow-lg border border-[#E8DDD0]">
+              <div class="text-[11px] uppercase tracking-wide text-[#8C7D6C]">Proyecto</div>
+              <div class="font-medium text-[14px] text-[#2D3A2E]">Cepas de Junín</div>
+              <div class="text-[12px] text-[#8C7D6C]">Carril del Centro • Junín, Mendoza</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LOTES ======================= -->
+<section class="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div>
+      <div class="inline-flex px-3 py-1 rounded-full bg-[#C86A4A]/10 border border-[#C86A4A]/20 text-[#C86A4A] text-[11px] tracking-[0.14em] uppercase font-medium">Lotes desde 400m²</div>
+      <h2 class="mt-3 font-serif text-[36px] lg:text-[48px] leading-[0.95]">Elegí tu lote en Junín</h2>
+      <p class="mt-3 text-[15px] text-[#8C7D6C] max-w-[560px] leading-6">Desde 400m², con orientación Este u Oeste. No hay lotes en esquina con doble frente, sí hay lotes más grandes que el resto con mayor superficie. Desde USD 15.000.</p>
+    </div>
+    <div class="text-[12px] tracking-wide uppercase text-[#8C7D6C]">Desde USD 15.000 • En USD</div>
+  </div>
+
+  <div class="mt-10 grid lg:grid-cols-3 gap-5">
+    <div class="relative rounded-[22px] bg-white border border-[#E8DDD0] p-6 lg:p-7 flex flex-col shadow-[0_8px_24px_rgba(140,125,108,0.08)]">
+      <div class="flex items-start justify-between">
+        <div>
+          <div class="font-serif text-[22px] leading-tight">Lote Clásico Lateral</div>
+          <div class="mt-1.5 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] text-[12px] text-[#8C7D6C]"><i data-lucide="ruler" class="w-3.5 h-3.5"></i> 402m² • Laterales</span>
+          </div>
+          <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[11px] text-[#5C3B6F]"><i data-lucide="compass" class="w-3 h-3"></i> Este / Oeste</div>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center"><i data-lucide="route" class="w-5 h-5 text-[#5C3B6F]"></i></div>
+      </div>
+      <div class="mt-6 h-[132px] rounded-2xl bg-[#FDFBF7] border border-dashed border-[#E8DDD0] grid place-items-center relative overflow-hidden">
+        <div class="relative text-center">
+          <div class="mx-auto w-28 h-16 rounded-lg border-2 border-[#2D3A2E]/20 bg-white shadow-sm grid place-items-center"><span class="text-[12px] font-medium text-[#2D3A2E]">402m²</span></div>
+          <div class="mt-2 text-[11px] text-[#8C7D6C]">Croquis ilustrativo • Este / Oeste</div>
+        </div>
+      </div>
+      <ul class="mt-5 grid gap-2">
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>402m² - lateral</li>
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>Orientación Este u Oeste</li>
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>Ideal primer lote</li>
+      </ul>
+      <div class="mt-auto pt-6 flex items-center justify-between">
+        <div class="text-[13px] font-medium">Desde USD 15.000</div>
+        <button type="button" data-scroll-form class="h-10 px-4 rounded-full bg-[#2D3A2E] text-white text-[13px] font-medium hover:bg-black transition">Consultar disponibilidad</button>
+      </div>
+    </div>
+
+    <div class="relative rounded-[22px] bg-white border border-[#E8DDD0] p-6 lg:p-7 flex flex-col shadow-[0_8px_24px_rgba(140,125,108,0.08)]">
+      <div class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[#5C3B6F] text-white text-[11px] tracking-wide uppercase">Más solicitado</div>
+      <div class="flex items-start justify-between">
+        <div>
+          <div class="font-serif text-[22px] leading-tight">Lote Central</div>
+          <div class="mt-1.5 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] text-[12px] text-[#8C7D6C]"><i data-lucide="ruler" class="w-3.5 h-3.5"></i> 409m² • Centrales</span>
+          </div>
+          <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[11px] text-[#5C3B6F]"><i data-lucide="compass" class="w-3 h-3"></i> Este / Oeste</div>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center"><i data-lucide="route" class="w-5 h-5 text-[#5C3B6F]"></i></div>
+      </div>
+      <div class="mt-6 h-[132px] rounded-2xl bg-[#FDFBF7] border border-dashed border-[#E8DDD0] grid place-items-center relative overflow-hidden">
+        <div class="relative text-center">
+          <div class="mx-auto w-28 h-16 rounded-lg border-2 border-[#2D3A2E]/20 bg-white shadow-sm grid place-items-center"><span class="text-[12px] font-medium text-[#2D3A2E]">409m²</span></div>
+          <div class="mt-2 text-[11px] text-[#8C7D6C]">Croquis ilustrativo • Este / Oeste</div>
+        </div>
+      </div>
+      <ul class="mt-5 grid gap-2">
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>409m² - central</li>
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>Orientación Este u Oeste</li>
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>Mayor frente útil</li>
+      </ul>
+      <div class="mt-auto pt-6 flex items-center justify-between">
+        <div class="text-[13px] font-medium">Desde USD 15.000</div>
+        <button type="button" data-scroll-form class="h-10 px-4 rounded-full bg-[#2D3A2E] text-white text-[13px] font-medium hover:bg-black transition">Consultar disponibilidad</button>
+      </div>
+    </div>
+
+    <div class="relative rounded-[22px] bg-white border border-[#E8DDD0] p-6 lg:p-7 flex flex-col shadow-[0_8px_24px_rgba(140,125,108,0.08)]">
+      <div class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[#5C3B6F] text-white text-[11px] tracking-wide uppercase">Más grande</div>
+      <div class="flex items-start justify-between">
+        <div>
+          <div class="font-serif text-[22px] leading-tight">Lote Grande</div>
+          <div class="mt-1.5 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] text-[12px] text-[#8C7D6C]"><i data-lucide="ruler" class="w-3.5 h-3.5"></i> 430m²+ • Superficie mayor</span>
+          </div>
+          <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[11px] text-[#5C3B6F]"><i data-lucide="compass" class="w-3 h-3"></i> Este / Oeste</div>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-[#FDFBF7] border border-[#E8DDD0] grid place-items-center"><i data-lucide="route" class="w-5 h-5 text-[#5C3B6F]"></i></div>
+      </div>
+      <div class="mt-6 h-[132px] rounded-2xl bg-[#FDFBF7] border border-dashed border-[#E8DDD0] grid place-items-center relative overflow-hidden">
+        <div class="relative text-center">
+          <div class="mx-auto w-28 h-16 rounded-lg border-2 border-[#2D3A2E]/20 bg-white shadow-sm grid place-items-center"><span class="text-[12px] font-medium text-[#2D3A2E]">430m²+</span></div>
+          <div class="mt-2 text-[11px] text-[#8C7D6C]">Croquis ilustrativo • Este / Oeste</div>
+        </div>
+      </div>
+      <ul class="mt-5 grid gap-2">
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>430m²+ aprox</li>
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>Sin doble frente</li>
+        <li class="flex items-center gap-2 text-[13.5px] text-[#2D3A2E]/75"><span class="w-5 h-5 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3 h-3 text-[#5C3B6F]"></i></span>Más grande que el resto</li>
+      </ul>
+      <div class="mt-auto pt-6 flex items-center justify-between">
+        <div class="text-[13px] font-medium">Desde USD 15.000</div>
+        <button type="button" data-scroll-form class="h-10 px-4 rounded-full bg-[#2D3A2E] text-white text-[13px] font-medium hover:bg-black transition">Consultar disponibilidad</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 rounded-2xl bg-[#FDFBF7] border border-[#E8DDD0] p-4 flex flex-wrap items-center gap-2 text-[12px] text-[#8C7D6C]">
+    <span class="w-6 h-6 rounded-full bg-[#5C3B6F]/10 grid place-items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-[#5C3B6F]"></i></span>
+    Aclaración importante: No hay lotes en esquina con doble frente. Sí existen lotes más grandes que el resto, con mayor superficie.
+  </div>
+</section>
+
+<!-- ======================= FINANCIACIÓN ======================= -->
+<section class="w-full max-w-full overflow-hidden pb-16 lg:pb-24">
+  <div class="mx-auto max-w-[1200px] px-5 lg:px-8">
+    <div class="rounded-[28px] bg-[#2D3A2E] text-[#FDFBF7] p-7 lg:p-10 relative overflow-hidden w-full max-w-full">
+      <div class="absolute inset-0 opacity-[0.08]" style="background-image:radial-gradient(circle at 2px 2px, #FDFBF7 1px, transparent 0);background-size:32px 32px"></div>
+      <div class="absolute right-0 top-0 w-[300px] h-[300px] rounded-full bg-[#C86A4A]/20 blur-[50px] pointer-events-none"></div>
+      <div class="absolute left-0 bottom-0 w-[240px] h-[240px] rounded-full bg-[#5C3B6F]/20 blur-[40px] pointer-events-none"></div>
+
+      <div class="relative">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] tracking-wide uppercase"><i data-lucide="dollar-sign" class="w-3.5 h-3.5"></i> Financiación en USD</div>
+            <h2 class="mt-4 font-serif text-[32px] lg:text-[48px] leading-[0.9] max-w-[520px]">4 formas de comprar tu lote, todo en USD</h2>
+            <p class="mt-3 text-white/70 leading-6 max-w-[520px] text-[15px]">Contado o financiado. Entrega de USD 7.500 y el resto en cuotas fijas en dólares. Trato directo con desarrollador.</p>
+          </div>
+          <div class="hidden lg:flex items-center gap-2 text-[12px] text-white/60"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Valores en USD</div>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="relative rounded-[20px] p-6 flex flex-col border bg-white/[0.06] border-white/15 text-white backdrop-blur transition">
+            <div class="flex items-center justify-between">
+              <div class="font-serif text-[18px] tracking-wide">CONTADO</div>
+              <div class="w-8 h-8 rounded-full grid place-items-center bg-white/10"><i data-lucide="dollar-sign" class="w-4 h-4 text-white"></i></div>
+            </div>
+            <div class="mt-4"><div class="font-serif text-[28px] leading-none">USD 15.000</div><div class="mt-2 text-[13px] text-white/70">Pago único</div></div>
+            <div class="mt-4"><span class="inline-flex px-2.5 py-1 rounded-full text-[11px] border bg-white/10 border-white/15 text-white/70">Mejor precio</span></div>
+            <button type="button" data-scroll-form class="mt-6 h-10 rounded-full text-[13px] font-medium transition bg-white text-[#2D3A2E] hover:bg-[#FDFBF7]">Quiero contado</button>
+          </div>
+
+          <div class="relative rounded-[20px] p-6 flex flex-col border bg-white/[0.06] border-white/15 text-white backdrop-blur transition">
+            <div class="flex items-center justify-between">
+              <div class="font-serif text-[18px] tracking-wide">PLAN 12</div>
+              <div class="w-8 h-8 rounded-full grid place-items-center bg-white/10"><i data-lucide="dollar-sign" class="w-4 h-4 text-white"></i></div>
+            </div>
+            <div class="mt-4"><div class="font-serif text-[28px] leading-none">USD 7.500</div><div class="mt-2 text-[13px] text-white/70">+ 12 cuotas de USD 850</div></div>
+            <div class="mt-4"><span class="inline-flex px-2.5 py-1 rounded-full text-[11px] border bg-white/10 border-white/15 text-white/70">Total USD 17.700</span></div>
+            <button type="button" data-scroll-form class="mt-6 h-10 rounded-full text-[13px] font-medium transition bg-white text-[#2D3A2E] hover:bg-[#FDFBF7]">Plan 12 cuotas</button>
+          </div>
+
+          <div class="relative rounded-[20px] p-6 flex flex-col border bg-white/[0.06] border-white/15 text-white backdrop-blur transition">
+            <div class="flex items-center justify-between">
+              <div class="font-serif text-[18px] tracking-wide">PLAN 18</div>
+              <div class="w-8 h-8 rounded-full grid place-items-center bg-white/10"><i data-lucide="dollar-sign" class="w-4 h-4 text-white"></i></div>
+            </div>
+            <div class="mt-4"><div class="font-serif text-[28px] leading-none">USD 7.500</div><div class="mt-2 text-[13px] text-white/70">+ 18 cuotas de USD 750</div></div>
+            <div class="mt-4"><span class="inline-flex px-2.5 py-1 rounded-full text-[11px] border bg-white/10 border-white/15 text-white/70">Total USD 21.000</span></div>
+            <button type="button" data-scroll-form class="mt-6 h-10 rounded-full text-[13px] font-medium transition bg-white text-[#2D3A2E] hover:bg-[#FDFBF7]">Plan 18 cuotas</button>
+          </div>
+
+          <div class="relative rounded-[20px] p-6 flex flex-col border bg-white text-[#2D3A2E] border-white shadow-[0_16px_40px_rgba(0,0,0,0.25)] scale-[1.02] transition">
+            <div class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[#C86A4A] text-white text-[11px] tracking-wide uppercase font-medium shadow">Más elegido</div>
+            <div class="flex items-center justify-between">
+              <div class="font-serif text-[18px] tracking-wide">PLAN 24</div>
+              <div class="w-8 h-8 rounded-full grid place-items-center bg-[#FDFBF7] border border-[#E8DDD0]"><i data-lucide="dollar-sign" class="w-4 h-4 text-[#5C3B6F]"></i></div>
+            </div>
+            <div class="mt-4"><div class="font-serif text-[28px] leading-none">USD 7.500</div><div class="mt-2 text-[13px] text-[#8C7D6C]">+ 24 cuotas de USD 650</div></div>
+            <div class="mt-4"><span class="inline-flex px-2.5 py-1 rounded-full text-[11px] border bg-[#FDFBF7] border-[#E8DDD0] text-[#8C7D6C]">Total USD 23.100</span></div>
+            <button type="button" data-scroll-form class="mt-6 h-10 rounded-full text-[13px] font-medium transition bg-[#C86A4A] text-white hover:brightness-110">Plan 24 cuotas</button>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3 text-[12px] text-white/60">
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10"><i data-lucide="file-check" class="w-3.5 h-3.5"></i> Escritura al finalizar la urbanización</span>
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Boleto de compra-venta con posesión</span>
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10"><i data-lucide="dollar-sign" class="w-3.5 h-3.5"></i> Todo en USD, sin sorpresas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GALERÍA ======================= -->
+<section class="mx-auto max-w-[1200px] px-5 lg:px-8 pb-16 lg:pb-24">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[#5C3B6F] text-[11px] tracking-wide uppercase font-medium"><i data-lucide="camera" class="w-3.5 h-3.5"></i> Avance de obra real</div>
+      <h2 class="mt-3 font-serif text-[30px] lg:text-[44px] leading-[0.95]">Urbanización entre fincas, con espacios verdes</h2>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8C7D6C]/10 border border-[#8C7D6C]/20 text-[12px] text-[#5C3B6F] font-medium shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>Fotos reales del barrio
+      </span>
+      <span class="text-[11px] text-[#8C7D6C] hidden lg:block text-right">Hacé clic para ampliar • 6 fotos reales</span>
+    </div>
+  </div>
+
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+    <button type="button" class="gallery-item group relative rounded-[20px] overflow-hidden bg-[#E8DDD0] border border-[#E8DDD0] h-[280px] lg:h-[320px] text-left shadow-[0_8px_24px_rgba(140,125,108,0.12)] hover:shadow-[0_16px_40px_rgba(92,59,111,0.18)] transition-all duration-300" data-full="images/casa-piedra-frente.jpg">
+      <img src="images/casa-piedra-frente.jpg" alt="Casa piedra 2 plantas - frente" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+      <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-sm opacity-0 group-hover:opacity-100 transition"><i data-lucide="expand" class="w-4 h-4 text-[#2D3A2E]"></i></div>
+      <div class="absolute bottom-0 inset-x-0 p-4">
+        <div class="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-medium border border-white/50 text-[#2D3A2E] shadow-sm">Espacios verdes • Agua y luz</div>
+        <div class="mt-2 text-[12px] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] line-clamp-1">Casa piedra 2 plantas - frente</div>
+      </div>
+    </button>
+
+    <button type="button" class="gallery-item group relative rounded-[20px] overflow-hidden bg-[#E8DDD0] border border-[#E8DDD0] h-[280px] lg:h-[320px] text-left shadow-[0_8px_24px_rgba(140,125,108,0.12)] hover:shadow-[0_16px_40px_rgba(92,59,111,0.18)] transition-all duration-300" data-full="images/casa-piedra-lateral.jpg">
+      <img src="images/casa-piedra-lateral.jpg" alt="Casa piedra lateral con balcón" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+      <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-sm opacity-0 group-hover:opacity-100 transition"><i data-lucide="expand" class="w-4 h-4 text-[#2D3A2E]"></i></div>
+      <div class="absolute bottom-0 inset-x-0 p-4">
+        <div class="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-medium border border-white/50 text-[#2D3A2E] shadow-sm">Espacios verdes • Agua y luz</div>
+        <div class="mt-2 text-[12px] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] line-clamp-1">Casa piedra lateral con balcón</div>
+      </div>
+    </button>
+
+    <button type="button" class="gallery-item group relative rounded-[20px] overflow-hidden bg-[#E8DDD0] border border-[#E8DDD0] h-[280px] lg:h-[320px] text-left shadow-[0_8px_24px_rgba(140,125,108,0.12)] hover:shadow-[0_16px_40px_rgba(92,59,111,0.18)] transition-all duration-300" data-full="images/vista-general.jpg">
+      <img src="images/vista-general.jpg" alt="Vista general con espacios verdes" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+      <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-sm opacity-0 group-hover:opacity-100 transition"><i data-lucide="expand" class="w-4 h-4 text-[#2D3A2E]"></i></div>
+      <div class="absolute bottom-0 inset-x-0 p-4">
+        <div class="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-medium border border-white/50 text-[#2D3A2E] shadow-sm">Espacios verdes • Agua y luz</div>
+        <div class="mt-2 text-[12px] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] line-clamp-1">Vista general con espacios verdes</div>
+      </div>
+    </button>
+
+    <button type="button" class="gallery-item group relative rounded-[20px] overflow-hidden bg-[#E8DDD0] border border-[#E8DDD0] h-[280px] lg:h-[320px] text-left shadow-[0_8px_24px_rgba(140,125,108,0.12)] hover:shadow-[0_16px_40px_rgba(92,59,111,0.18)] transition-all duration-300" data-full="images/casa-larga-beige.jpg">
+      <img src="images/casa-larga-beige.jpg" alt="Casa larga 1 planta - beige" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+      <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-sm opacity-0 group-hover:opacity-100 transition"><i data-lucide="expand" class="w-4 h-4 text-[#2D3A2E]"></i></div>
+      <div class="absolute bottom-0 inset-x-0 p-4">
+        <div class="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-medium border border-white/50 text-[#2D3A2E] shadow-sm">Espacios verdes • Agua y luz</div>
+        <div class="mt-2 text-[12px] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] line-clamp-1">Casa larga 1 planta - beige</div>
+      </div>
+    </button>
+
+    <button type="button" class="gallery-item group relative rounded-[20px] overflow-hidden bg-[#E8DDD0] border border-[#E8DDD0] h-[280px] lg:h-[320px] text-left shadow-[0_8px_24px_rgba(140,125,108,0.12)] hover:shadow-[0_16px_40px_rgba(92,59,111,0.18)] transition-all duration-300" data-full="images/casa-beige-piedra.jpg">
+      <img src="images/casa-beige-piedra.jpg" alt="Casa beige con piedra" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+      <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-sm opacity-0 group-hover:opacity-100 transition"><i data-lucide="expand" class="w-4 h-4 text-[#2D3A2E]"></i></div>
+      <div class="absolute bottom-0 inset-x-0 p-4">
+        <div class="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-medium border border-white/50 text-[#2D3A2E] shadow-sm">Espacios verdes • Agua y luz</div>
+        <div class="mt-2 text-[12px] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] line-clamp-1">Casa beige con piedra</div>
+      </div>
+    </button>
+
+    <button type="button" class="gallery-item group relative rounded-[20px] overflow-hidden bg-[#E8DDD0] border border-[#E8DDD0] h-[280px] lg:h-[320px] text-left shadow-[0_8px_24px_rgba(140,125,108,0.12)] hover:shadow-[0_16px_40px_rgba(92,59,111,0.18)] transition-all duration-300" data-full="images/lateral-beige-detalle.jpg">
+      <img src="images/lateral-beige-detalle.jpg" alt="Lateral casa beige - detalle" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+      <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-sm opacity-0 group-hover:opacity-100 transition"><i data-lucide="expand" class="w-4 h-4 text-[#2D3A2E]"></i></div>
+      <div class="absolute bottom-0 inset-x-0 p-4">
+        <div class="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-medium border border-white/50 text-[#2D3A2E] shadow-sm">Espacios verdes • Agua y luz</div>
+        <div class="mt-2 text-[12px] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] line-clamp-1">Lateral casa beige - detalle</div>
+      </div>
+    </button>
+  </div>
+
+  <div class="mt-6 flex flex-wrap gap-3">
+    <div class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] text-[12px] text-[#8C7D6C]"><i data-lucide="route" class="w-4 h-4 text-[#5C3B6F]"></i> Fotos reales de avance de obra</div>
+    <div class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#FDFBF7] border border-[#E8DDD0] text-[12px] text-[#8C7D6C]"><i data-lucide="trees" class="w-4 h-4 text-[#5C3B6F]"></i> Espacios verdes • Calles con ripio</div>
+  </div>
+</section>
+
+<!-- Modal / lightbox de galería -->
+<div id="lightbox" class="hidden fixed inset-0 z-[80] bg-black/90 backdrop-blur-xl items-center justify-center p-4 lg:p-8">
+  <button type="button" id="lightboxClose" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white grid place-items-center transition"><i data-lucide="x" class="w-5 h-5"></i></button>
+  <div class="relative max-w-[1100px] w-full">
+    <img id="lightboxImg" src="" alt="Avance de obra ampliado" class="w-full max-h-[80vh] object-contain rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
+    <div class="mt-4 flex justify-center">
+      <span class="px-4 py-2 rounded-full bg-white text-[#2D3A2E] text-[13px] font-medium shadow-lg">Fotos reales - Cepas de Junín • Carril del Centro, Junín</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= FAQ ======================= -->
+<section class="border-t border-[#E8DDD0] bg-white/60">
+  <div class="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-20 grid lg:grid-cols-[0.8fr_1.2fr] gap-10">
+    <div>
+      <h2 class="font-serif text-[32px] leading-[0.95]">Dudas frecuentes</h2>
+      <p class="mt-3 text-[14px] text-[#8C7D6C] max-w-[340px] leading-6">Respuestas directas con información real del desarrollo. Si tenés otra consulta, escribinos por WhatsApp.</p>
+      <a href="#" class="wsp-link mt-6 inline-flex h-10 px-4 rounded-full bg-[#5C3B6F] text-white text-[13px] items-center gap-2 hover:bg-[#4a305a] transition" target="_blank" rel="noopener">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Hablar con asesor
+      </a>
+    </div>
+
+    <div class="grid gap-3">
+      <div class="faq-item rounded-2xl bg-white border border-[#E8DDD0] overflow-hidden">
+        <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-5 py-4 text-left">
+          <span class="font-medium text-[15px]">¿Tiene escritura?</span>
+          <span class="faq-icon w-8 h-8 rounded-full border border-[#E8DDD0] grid place-items-center transition"><i data-lucide="chevron-down" class="w-4 h-4"></i></span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-[14px] leading-6 text-[#8C7D6C]">No es inmediata. La escritura se entrega al finalizar la urbanización. Mientras tanto firmás boleto de compra-venta con posesión, con trato directo con desarrollador.</div>
+      </div>
+      <div class="faq-item rounded-2xl bg-white border border-[#E8DDD0] overflow-hidden">
+        <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-5 py-4 text-left">
+          <span class="font-medium text-[15px]">¿Qué servicios tiene?</span>
+          <span class="faq-icon w-8 h-8 rounded-full border border-[#E8DDD0] grid place-items-center transition"><i data-lucide="chevron-down" class="w-4 h-4"></i></span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-[14px] leading-6 text-[#8C7D6C]">Con servicios de agua y luz, calles con ripio, espacios verdes y portal de ingreso con seguridad privada las 24hs. Urbanización entre fincas en Carril del Centro.</div>
+      </div>
+      <div class="faq-item rounded-2xl bg-white border border-[#E8DDD0] overflow-hidden">
+        <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-5 py-4 text-left">
+          <span class="font-medium text-[15px]">¿Cómo son los lotes?</span>
+          <span class="faq-icon w-8 h-8 rounded-full border border-[#E8DDD0] grid place-items-center transition"><i data-lucide="chevron-down" class="w-4 h-4"></i></span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-[14px] leading-6 text-[#8C7D6C]">Lotes desde 400m². Lote Clásico Lateral 402m², Lote Central 409m² y Lote Grande de 430m²+ aprox. Orientación Este u Oeste. Aclaración: no hay lotes en esquina con doble frente, sí hay lotes más grandes que el resto con mayor superficie.</div>
+      </div>
+      <div class="faq-item rounded-2xl bg-white border border-[#E8DDD0] overflow-hidden">
+        <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-5 py-4 text-left">
+          <span class="font-medium text-[15px]">¿Cómo es la financiación?</span>
+          <span class="faq-icon w-8 h-8 rounded-full border border-[#E8DDD0] grid place-items-center transition"><i data-lucide="chevron-down" class="w-4 h-4"></i></span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-[14px] leading-6 text-[#8C7D6C]">Todo en USD. 4 opciones: CONTADO USD 15.000. PLAN 12: USD 7.500 + 12 cuotas de USD 850. PLAN 18: USD 7.500 + 18 cuotas de USD 750. PLAN 24: USD 7.500 + 24 cuotas de USD 650. El Plan 24 es el más elegido.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA FINAL ======================= -->
+<section class="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
+  <div class="rounded-[28px] bg-gradient-to-br from-[#2D3A2E] via-[#2D3A2E] to-[#5C3B6F] text-[#FDFBF7] p-8 lg:p-14 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.08]" style="background-image:radial-gradient(circle at 1px 1px, white 1px, transparent 0);background-size:24px 24px"></div>
+    <div class="absolute -right-10 -bottom-20 w-[380px] h-[380px] rounded-full bg-[#C86A4A]/25 blur-[50px]"></div>
+    <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div class="max-w-[560px]">
+        <h2 class="font-serif text-[36px] lg:text-[52px] leading-[0.9]">¿Listo para tu lote desde USD 15.000?</h2>
+        <p class="mt-4 text-white/70 leading-7">Carril del Centro entre Santos Lugares y Olivares, Junín. Portal con seguridad 24hs, agua y luz, calles con ripio y espacios verdes. A 9 min de Junín, 10 de Rivadavia y 17 de San Martín.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+        <a href="#" class="wsp-link h-12 px-6 rounded-full bg-white text-[#2D3A2E] font-medium text-[14px] inline-flex items-center justify-center gap-2 hover:brightness-95 transition" target="_blank" rel="noopener">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Agendar visita por WhatsApp
+        </a>
+        <button type="button" data-scroll-form class="h-12 px-6 rounded-full bg-[#C86A4A] text-white font-medium text-[14px] inline-flex items-center justify-center gap-2 hover:brightness-110 transition">
+          Consultar financiación <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-[#1a1f1a] text-[#FDFBF7] border-t border-white/10">
+  <div class="mx-auto max-w-[1200px] px-5 lg:px-8 py-12 flex flex-col lg:flex-row gap-10 justify-between">
+    <div>
+      <div class="inline-flex rounded-2xl bg-white px-4 py-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+        <img src="images/logo.jpg" alt="Cepas de Junín logo footer" class="h-[42px] w-auto object-contain">
+      </div>
+      <p class="mt-4 text-[13px] leading-5 text-white/60 max-w-[340px]">Urbanización entre fincas en Junín, Mendoza. Carril del Centro entre Santos Lugares y Olivares. Portal con seguridad 24hs, agua y luz, calles con ripio y espacios verdes.</p>
+      <div class="mt-4 flex flex-wrap gap-2 text-[12px]">
+        <span class="px-2.5 py-1 rounded-full bg-white/10 border border-white/10">@cepasdejunin</span>
+        <span class="px-2.5 py-1 rounded-full bg-white/10 border border-white/10">Junín, Mendoza</span>
+        <span class="px-2.5 py-1 rounded-full bg-white/10 border border-white/10">Desde USD 15.000</span>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-8 text-[13px]">
+      <div class="grid gap-2 text-white/60">
+        <div class="font-medium text-white">Contacto</div>
+        <div>Carril del Centro e/ Santos Lugares y Olivares, Junín</div>
+        <div id="footerWspText">WhatsApp: +54 9 2634 44-8000</div>
+        <div>info@cepasdejunin.com</div>
+      </div>
+      <div class="grid gap-2 text-white/60">
+        <div class="font-medium text-white">Legal</div>
+        <div>© <span id="year"></span> Cepas de Junín. Todos los derechos reservados.</div>
+        <div class="text-[11px] leading-4 max-w-[340px] text-white/40">Escritura al finalizar la urbanización. Fotos reales del barrio. Lotes desde 400m² (402 y 409). Precios en USD sujetos a modificación. Orientación Este/Oeste. No hay lotes esquina con doble frente.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="#" class="wsp-link fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-[0_12px_32px_rgba(37,211,102,0.45)] hover:scale-105 active:scale-95 transition" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i data-lucide="message-circle" class="w-6 h-6"></i>
+</a>
+
+
+<script>
+/* ============================================================================
+   CONFIG — Editá acá los datos que se repiten en toda la página
+   ============================================================================ */
+const CONFIG = {
+  // Número de WhatsApp SIN espacios ni signos, con código de país (54 9 + código de área sin el 0 + número sin el 15)
+  whatsappNumber: "5492613896838",
+
+  // Mensaje que se prearma cuando alguien toca "WhatsApp" sin haber llenado el formulario
+  whatsappMensajeGenerico: "Hola! Quiero info sobre los lotes de Barrio Cepas de Junín - Carril del Centro",
+
+  // A dónde se envían los datos del formulario. Reemplazá por tu endpoint real
+  formEndpoint: "https://script.google.com/macros/s/AKfycbzn30KKr9X60yf-fciZ-hKojaiMt9U7LxqTD13WDiqByEvD3WGJyT13RHql4-Jureao5Q/exec", // Ej: "https://formspree.io/f/xxxxxxx" o URL de Make/Google Sheets
+
+  // Meta Pixel ID de tu cuenta de Meta Ads (Administrador de eventos). Dejalo vacío para no cargar el Pixel.
+  metaPixelId: "2979584418982525" // Ej: "1234567890123456"
+};
+
+/* ============================================================================
+   No hace falta tocar nada de acá para abajo
+   ============================================================================ */
+lucide.createIcons();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Arma el link de WhatsApp genérico y lo aplica a todos los botones "WhatsApp"
+function buildWspLink(mensaje){
+  return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(mensaje);
+}
+document.querySelectorAll('.wsp-link').forEach(a => {
+  a.href = buildWspLink(CONFIG.whatsappMensajeGenerico);
+});
+
+// Botones "Quiero conocer / Consultar" que llevan al formulario con scroll suave
+const formAnchor = document.getElementById('formAnchor');
+const formCard = document.getElementById('formCard');
+const scrollToast = document.getElementById('scrollToast');
+document.querySelectorAll('[data-scroll-form]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    scrollToast.classList.remove('hidden');
+    scrollToast.classList.add('flex');
+    formCard.classList.add('border-[#C86A4A]', 'ring-2', 'ring-[#C86A4A]/20');
+    formAnchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => document.getElementById('fNombre').focus(), 500);
+    setTimeout(() => {
+      scrollToast.classList.add('hidden');
+      scrollToast.classList.remove('flex');
+    }, 2200);
+    setTimeout(() => formCard.classList.remove('border-[#C86A4A]', 'ring-2', 'ring-[#C86A4A]/20'), 1800);
+  });
+});
+
+// Captura de parámetros de la URL (UTMs y fbclid) que llegan desde el anuncio de Meta
+(function captureUtms(){
+  const params = new URLSearchParams(window.location.search);
+  const map = {
+    utm_source: 'fUtmSource',
+    utm_medium: 'fUtmMedium',
+    utm_campaign: 'fUtmCampaign',
+    utm_content: 'fUtmContent',
+    fbclid: 'fFbclid'
+  };
+  Object.entries(map).forEach(([param, inputId]) => {
+    const val = params.get(param);
+    if (val) document.getElementById(inputId).value = val;
+  });
+})(); // <-- CORRECCIÓN: Agregados los paréntesis aquí para que la función se ejecute sola
+
+// Variables de los contenedores
+const leadForm = document.getElementById('leadForm');
+const step2Box = document.getElementById('step2Box');
+const qualifyForm = document.getElementById('qualifyForm');
+const thanksBox = document.getElementById('thanksBox');
+const skipBtn = document.getElementById('skipBtn');
+// <-- CORRECCIÓN: Se eliminaron las declaraciones duplicadas que rompían el código
+
+let currentLeadData = {}; // Acá guardamos temporalmente el Nombre y WhatsApp
+
+// --- PASO 1: Captura inicial ---
+leadForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const nombre = document.getElementById('fNombre').value.trim();
+  const whatsapp = document.getElementById('fWhatsapp').value.trim();
+  if (!nombre || !whatsapp) return;
+
+  const btn1 = document.getElementById('submitBtn1');
+  btn1.disabled = true;
+  btn1.innerHTML = 'Procesando...';
+
+  // Guardamos datos
+  const formData = new FormData(leadForm);
+  currentLeadData = Object.fromEntries(formData.entries());
+  currentLeadData.fase = "Paso 1 - Inicial";
+
+  // 1) Enviar de fondo el Paso 1 al webhook (Google Sheets / Make)
+  if (CONFIG.formEndpoint) {
+    fetch(CONFIG.formEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(currentLeadData)
+    }).catch(console.error); // Ignoramos errores visuales para no frenar al usuario
+  }
+
+  // Evento de Meta Pixel
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', { content_name: 'Paso 1 Capturado' });
+  }
+
+  // 2) Transición visual al Paso 2
+  leadForm.classList.add('hidden');
+  step2Box.classList.remove('hidden');
+  // Re-renderizamos iconos nuevos
+  lucide.createIcons();
+});
+
+// --- FUNCIÓN CENTRAL: Terminar y abrir WhatsApp ---
+function finalizarFlujo(datosCalificacion = {}) {
+  // Ocultar paso 2 y mostrar gracias
+  step2Box.classList.add('hidden');
+  thanksBox.classList.remove('hidden');
+
+  // Si completó el paso 2, enviamos la actualización
+  if (Object.keys(datosCalificacion).length > 0 && CONFIG.formEndpoint) {
+    const finalData = { ...currentLeadData, ...datosCalificacion, fase: "Paso 2 - Calificado" };
+    fetch(CONFIG.formEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(finalData)
+    }).catch(console.error);
+  }
+
+  // Armar el mensaje para enviarlo por WhatsApp
+  let mensajeWsp = `Hola! Soy ${currentLeadData.nombre}. Mi WhatsApp es ${currentLeadData.whatsapp}. Quiero info sobre los lotes de Cepas de Junín.`;
+  
+  if (datosCalificacion.plazo && datosCalificacion.plazo !== "No definido") {
+    mensajeWsp += ` Plazo: ${datosCalificacion.plazo}.`;
+  }
+  if (datosCalificacion.pago && datosCalificacion.pago !== "No definido") {
+    mensajeWsp += ` Interés en: ${datosCalificacion.pago}.`;
+  }
+
+  const wspUrl = buildWspLink(mensajeWsp);
+  thanksBox.querySelector('.wsp-link').href = wspUrl;
+  
+  // Abrir WhatsApp tras un breve instante para asegurar que vea el msj de gracias
+  setTimeout(() => { window.open(wspUrl, '_blank'); }, 500);
+}
+
+// --- PASO 2: Envío de respuestas ---
+qualifyForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn2 = document.getElementById('submitBtn2');
+  btn2.disabled = true;
+  btn2.innerHTML = 'Redirigiendo...';
+  
+  const califData = Object.fromEntries(new FormData(qualifyForm).entries());
+  finalizarFlujo(califData);
+});
+
+// --- PASO 2: Saltar (Skip) ---
+skipBtn.addEventListener('click', () => {
+  skipBtn.textContent = 'Redirigiendo...';
+  finalizarFlujo(); // Llamamos sin datos extra
+});
+
+// --- CORRECCIÓN: Acordeón de preguntas frecuentes restaurado ---
+document.querySelectorAll('.faq-item').forEach(item => {
+  const toggle = item.querySelector('.faq-toggle');
+  const answer = item.querySelector('.faq-answer');
+  const icon = item.querySelector('.faq-icon');
+  
+  toggle.addEventListener('click', () => {
+    const isOpen = !answer.classList.contains('hidden');
+    
+    // Cierra todos los demás
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180', 'bg-[#5C3B6F]', 'text-white', 'border-[#5C3B6F]'));
+    
+    // Abre el seleccionado si estaba cerrado
+    if (!isOpen) {
+      answer.classList.remove('hidden');
+      icon.classList.add('rotate-180', 'bg-[#5C3B6F]', 'text-white', 'border-[#5C3B6F]');
+    }
+  });
+});
+
+// Galería / lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    lightboxImg.src = item.dataset.full;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+  });
+});
+function closeLightbox(){
+  lightbox.classList.add('hidden');
+  lightbox.classList.remove('flex');
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+// Meta Pixel (se carga solo si completaste CONFIG.metaPixelId)
+if (CONFIG.metaPixelId) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', CONFIG.metaPixelId);
+  fbq('track', 'PageView');
+}
+</script>
+
+</body>
+</html>
