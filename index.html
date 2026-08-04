@@ -828,13 +828,15 @@ leadForm.addEventListener('submit', async (e) => {
   currentLeadData = Object.fromEntries(formData.entries());
   currentLeadData.fase = "Paso 1 - Inicial";
 
+
   // 1) Enviar de fondo el Paso 1 al webhook (Google Sheets / Make)
   if (CONFIG.formEndpoint) {
     fetch(CONFIG.formEndpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors', // Agregado para evitar el bloqueo CORS
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // Cambiado a text/plain
       body: JSON.stringify(currentLeadData)
-    }).catch(console.error); // Ignoramos errores visuales para no frenar al usuario
+    }).catch(console.error); 
   }
 
   // Evento de Meta Pixel
@@ -855,16 +857,17 @@ function finalizarFlujo(datosCalificacion = {}) {
   step2Box.classList.add('hidden');
   thanksBox.classList.remove('hidden');
 
+
   // Si completó el paso 2, enviamos la actualización
   if (Object.keys(datosCalificacion).length > 0 && CONFIG.formEndpoint) {
     const finalData = { ...currentLeadData, ...datosCalificacion, fase: "Paso 2 - Calificado" };
     fetch(CONFIG.formEndpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors', // Agregado
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // Cambiado a text/plain
       body: JSON.stringify(finalData)
     }).catch(console.error);
   }
-
   // Armar el mensaje para enviarlo por WhatsApp
   let mensajeWsp = `Hola! Soy ${currentLeadData.nombre}. Mi WhatsApp es ${currentLeadData.whatsapp}. Quiero info sobre los lotes de Cepas de Junín.`;
   
