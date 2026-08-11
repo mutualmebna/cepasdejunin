@@ -18,6 +18,21 @@
 
 <link rel="icon" href="images/logo.jpg">
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2583492122069724');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+
 <style>
   html { scroll-behavior: smooth; }
   h1,h2,h3,.font-serif { font-family: 'Instrument Serif', Georgia, serif; }
@@ -44,7 +59,7 @@ src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
       <span class="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#5C3B6F]/10 border border-[#5C3B6F]/15 text-[11px] text-[#5C3B6F] uppercase tracking-wide font-medium">
         <span class="w-1.5 h-1.5 rounded-full bg-[#5C3B6F] animate-pulse"></span> Lotes desde USD 15.000
       </span>
-      <a href="#" class="wsp-link" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] text-white text-[13.5px] font-medium shadow-[0_8px_24px_rgba(37,211,102,0.25)] hover:brightness-[1.05] transition">
+      <a href="#" class="wsp-link inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] text-white text-[13.5px] font-medium shadow-[0_8px_24px_rgba(37,211,102,0.25)] hover:brightness-[1.05] transition" target="_blank" rel="noopener">
         <i data-lucide="message-circle" class="w-4 h-4"></i>
         <span class="hidden sm:inline">WhatsApp</span>
         <span class="sm:hidden">Hablar</span>
@@ -751,14 +766,14 @@ const CONFIG = {
   whatsappMensajeGenerico: "Hola! Quiero info sobre los lotes de Barrio Cepas de Junín - Carril del Centro",
 
   // A dónde se envían los datos del formulario. Reemplazá por tu endpoint real
-  formEndpoint: "https://script.google.com/macros/s/AKfycbzn30KKr9X60yf-fciZ-hKojaiMt9U7LxqTD13WDiqByEvD3WGJyT13RHql4-Jureao5Q/exec", // Ej: "https://formspree.io/f/xxxxxxx" o URL de Make/Google Sheets
+  formEndpoint: "https://script.google.com/macros/s/AKfycbzn30KKr9X60yf-fciZ-hKojaiMt9U7LxqTD13WDiqByEvD3WGJyT13RHql4-Jureao5Q/exec",
 
-  // Meta Pixel ID de tu cuenta de Meta Ads (Administrador de eventos). Dejalo vacío para no cargar el Pixel.
-  metaPixelId: "1590990705868467" // Ej: "1234567890123456"
+  // Meta Pixel ID de tu cuenta de Meta Ads (Administrador de eventos).
+  metaPixelId: "2583492122069724"
 };
 
 /* ============================================================================
-   No hace falta tocar nada de acá para abajo
+   Lógica de la página
    ============================================================================ */
 lucide.createIcons();
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -804,7 +819,7 @@ document.querySelectorAll('[data-scroll-form]').forEach(btn => {
     const val = params.get(param);
     if (val) document.getElementById(inputId).value = val;
   });
-})(); // <-- CORRECCIÓN: Agregados los paréntesis aquí para que la función se ejecute sola
+})();
 
 // Variables de los contenedores
 const leadForm = document.getElementById('leadForm');
@@ -812,9 +827,8 @@ const step2Box = document.getElementById('step2Box');
 const qualifyForm = document.getElementById('qualifyForm');
 const thanksBox = document.getElementById('thanksBox');
 const skipBtn = document.getElementById('skipBtn');
-// <-- CORRECCIÓN: Se eliminaron las declaraciones duplicadas que rompían el código
 
-let currentLeadData = {}; // Acá guardamos temporalmente el Nombre y WhatsApp
+let currentLeadData = {}; // Guardado temporal de Nombre y WhatsApp
 
 // --- PASO 1: Captura inicial ---
 leadForm.addEventListener('submit', async (e) => {
@@ -833,13 +847,12 @@ leadForm.addEventListener('submit', async (e) => {
   currentLeadData = Object.fromEntries(formData.entries());
   currentLeadData.fase = "Paso 1 - Inicial";
 
-
   // 1) Enviar de fondo el Paso 1 al webhook (Google Sheets / Make)
   if (CONFIG.formEndpoint) {
     fetch(CONFIG.formEndpoint, {
       method: 'POST',
-      mode: 'no-cors', // Agregado para evitar el bloqueo CORS
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // Cambiado a text/plain
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(currentLeadData)
     }).catch(console.error); 
   }
@@ -852,13 +865,11 @@ leadForm.addEventListener('submit', async (e) => {
   // 2) Transición visual al Paso 2
   leadForm.classList.add('hidden');
   step2Box.classList.remove('hidden');
-  // Re-renderizamos iconos nuevos
   lucide.createIcons();
 });
 
 // --- FUNCIÓN CENTRAL: Terminar y abrir WhatsApp ---
 function finalizarFlujo(datosCalificacion = {}) {
-  // Ocultar paso 2 y mostrar gracias
   step2Box.classList.add('hidden');
   thanksBox.classList.remove('hidden');
 
@@ -872,11 +883,12 @@ function finalizarFlujo(datosCalificacion = {}) {
     const finalData = { ...currentLeadData, ...datosCalificacion, fase: "Paso 2 - Calificado" };
     fetch(CONFIG.formEndpoint, {
       method: 'POST',
-      mode: 'no-cors', // Agregado
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // Cambiado a text/plain
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(finalData)
     }).catch(console.error);
   }
+
   // Armar el mensaje para enviarlo por WhatsApp
   let mensajeWsp = `Hola! Soy ${currentLeadData.nombre}. Mi WhatsApp es ${currentLeadData.whatsapp}. Quiero info sobre los lotes de Cepas de Junín.`;
   
@@ -890,7 +902,6 @@ function finalizarFlujo(datosCalificacion = {}) {
   const wspUrl = buildWspLink(mensajeWsp);
   thanksBox.querySelector('.wsp-link').href = wspUrl;
   
-  // Abrir WhatsApp tras un breve instante para asegurar que vea el msj de gracias
   setTimeout(() => { window.open(wspUrl, '_blank'); }, 500);
 }
 
@@ -908,10 +919,10 @@ qualifyForm.addEventListener('submit', (e) => {
 // --- PASO 2: Saltar (Skip) ---
 skipBtn.addEventListener('click', () => {
   skipBtn.textContent = 'Redirigiendo...';
-  finalizarFlujo(); // Llamamos sin datos extra
+  finalizarFlujo();
 });
 
-// --- CORRECCIÓN: Acordeón de preguntas frecuentes restaurado ---
+// Acordeón de preguntas frecuentes
 document.querySelectorAll('.faq-item').forEach(item => {
   const toggle = item.querySelector('.faq-toggle');
   const answer = item.querySelector('.faq-answer');
@@ -920,11 +931,9 @@ document.querySelectorAll('.faq-item').forEach(item => {
   toggle.addEventListener('click', () => {
     const isOpen = !answer.classList.contains('hidden');
     
-    // Cierra todos los demás
     document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
     document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180', 'bg-[#5C3B6F]', 'text-white', 'border-[#5C3B6F]'));
     
-    // Abre el seleccionado si estaba cerrado
     if (!isOpen) {
       answer.classList.remove('hidden');
       icon.classList.add('rotate-180', 'bg-[#5C3B6F]', 'text-white', 'border-[#5C3B6F]');
@@ -948,17 +957,6 @@ function closeLightbox(){
 }
 document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
-// Meta Pixel (se carga solo si completaste CONFIG.metaPixelId)
-if (CONFIG.metaPixelId) {
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', CONFIG.metaPixelId);
-  fbq('track', 'PageView');
-}
 </script>
 
 </body>
