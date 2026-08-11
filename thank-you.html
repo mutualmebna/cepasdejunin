@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Gracias por tu consulta! — Cepas de Junín</title>
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<link rel="icon" href="images/logo.jpg">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2583492122069724');
+fbq('track', 'PageView');
+// Tracking de Conversión Final
+fbq('track', 'CompleteRegistration', { content_name: 'Lead Calificado Cepas de Junin' });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
+/></noscript>
+
+<style>
+  h1,h2,h3,.font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  [data-lucide] { display: inline-block; }
+</style>
+</head>
+
+<body class="min-h-screen w-full bg-[#FDFBF7] text-[#2D3A2E] flex flex-col justify-between items-center p-5">
+
+  <div class="w-full max-w-[600px] my-auto py-12 text-center">
+    <!-- Icono de confirmación -->
+    <div class="mx-auto w-20 h-20 rounded-full bg-[#25D366]/10 border border-[#25D366]/30 grid place-items-center text-[#25D366] mb-6 shadow-lg">
+      <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+    </div>
+
+    <!-- Títulos -->
+    <span class="px-3.5 py-1.5 rounded-full bg-[#5C3B6F]/10 text-[#5C3B6F] text-[12px] tracking-wide uppercase font-medium">
+      Solicitud Recibida
+    </span>
+
+    <h1 class="mt-4 font-serif text-[42px] sm:text-[52px] leading-tight text-[#2D3A2E]">
+      ¡Gracias por tu interés en Cepas de Junín!
+    </h1>
+
+    <p class="mt-4 text-[16px] leading-7 text-[#8C7D6C] max-w-[480px] mx-auto">
+      Un asesor de ventas está revisando tus preferencias para prepararte la ficha técnica y las opciones de financiación en USD.
+    </p>
+
+    <!-- Caja de Acción Directa -->
+    <div class="mt-8 p-6 rounded-[24px] bg-white border border-[#E8DDD0] shadow-[0_12px_32px_rgba(0,0,0,0.06)] text-left">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-[#25D366] text-white grid place-items-center shrink-0">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-[15px] text-[#2D3A2E]">Atención Inmediata</h3>
+          <p class="text-[12.5px] text-[#8C7D6C]">Podés iniciar el chat ahora mismo</p>
+        </div>
+      </div>
+
+      <a id="wspBtn" href="#" target="_blank" rel="noopener"
+        class="w-full h-[54px] rounded-2xl bg-[#25D366] text-white font-medium text-[15.5px] shadow-[0_12px_24px_rgba(37,211,102,0.3)] hover:brightness-105 transition flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Hablar con un Asesor por WhatsApp
+      </a>
+    </div>
+
+    <div class="mt-8 flex items-center justify-center gap-2 text-[12px] text-[#8C7D6C]">
+      <i data-lucide="shield-check" class="w-4 h-4"></i> Trato directo con el desarrollador • Junín, Mendoza
+    </div>
+  </div>
+
+  <footer class="text-[12px] text-[#8C7D6C] py-4 border-t border-[#E8DDD0] w-full text-center">
+    © <span id="year"></span> Cepas de Junín. Todos los derechos reservados.
+  </footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const PHONE = "5492613896838";
+
+  // Recuperar los datos del lead capturados en el Paso 2
+  const rawLead = sessionStorage.getItem('leadData');
+  let leadData = rawLead ? JSON.parse(rawLead) : {};
+
+  // Construir mensaje dinámico de WhatsApp
+  let mensaje = `Hola! Soy ${leadData.nombre || 'un interesado'}. Estuve viendo los lotes de Cepas de Junín.`;
+  if (leadData.residencia) mensaje += `\n📍 Residencia: ${leadData.residencia}`;
+  if (leadData.plazo) mensaje += `\n⏱️ Plazo: ${leadData.plazo}`;
+  if (leadData.pago) mensaje += `\n💳 Pago: ${leadData.pago}`;
+  if (leadData.uso) mensaje += `\n🏡 Destino: ${leadData.uso}`;
+
+  const wspUrl = `https://wa.me/${PHONE}?text=${encodeURIComponent(mensaje)}`;
+  document.getElementById('wspBtn').href = wspUrl;
+
+  // Redirección automática a WhatsApp tras 2 segundos para agilizar el flujo comercial
+  setTimeout(() => {
+    window.location.href = wspUrl;
+  }, 2000);
+</script>
+
+</body>
+</html>
