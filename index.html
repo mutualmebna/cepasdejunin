@@ -27,6 +27,11 @@
 </head>
 
 <body class="min-h-screen w-full max-w-full bg-[#FDFBF7] text-[#2D3A2E] overflow-x-hidden">
+<!-- Meta Pixel Code (noscript fallback) -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1590990705868467&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 <!-- ======================= HEADER ======================= -->
 <header class="sticky top-0 z-40 backdrop-blur-xl bg-white/92 border-b border-[#E8DDD0] shadow-[0_4px_24px_rgba(92,59,111,0.06)]">
@@ -749,7 +754,7 @@ const CONFIG = {
   formEndpoint: "https://script.google.com/macros/s/AKfycbzn30KKr9X60yf-fciZ-hKojaiMt9U7LxqTD13WDiqByEvD3WGJyT13RHql4-Jureao5Q/exec", // Ej: "https://formspree.io/f/xxxxxxx" o URL de Make/Google Sheets
 
   // Meta Pixel ID de tu cuenta de Meta Ads (Administrador de eventos). Dejalo vacío para no cargar el Pixel.
-  metaPixelId: "2979584418982525" // Ej: "1234567890123456"
+  metaPixelId: "1590990705868467" // Ej: "1234567890123456"
 };
 
 /* ============================================================================
@@ -857,6 +862,10 @@ function finalizarFlujo(datosCalificacion = {}) {
   step2Box.classList.add('hidden');
   thanksBox.classList.remove('hidden');
 
+  // Evento de Meta Pixel al completar el flujo (calificación final)
+  if (typeof fbq === 'function') {
+    fbq('track', 'CompleteRegistration', { content_name: 'Flujo Calificado' });
+  }
 
   // Si completó el paso 2, enviamos la actualización
   if (Object.keys(datosCalificacion).length > 0 && CONFIG.formEndpoint) {
