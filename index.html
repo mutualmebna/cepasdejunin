@@ -18,7 +18,7 @@
 
 <link rel="icon" href="images/logo.jpg">
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code (ESTRUCTURA OFICIAL DE LA IMAGEN) -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -31,6 +31,9 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '2583492122069724');
 fbq('track', 'PageView');
 </script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
+/></noscript>
 <!-- End Meta Pixel Code -->
 
 <style>
@@ -42,11 +45,6 @@ fbq('track', 'PageView');
 </head>
 
 <body class="min-h-screen w-full max-w-full bg-[#FDFBF7] text-[#2D3A2E] overflow-x-hidden">
-<!-- Meta Pixel Code (noscript fallback) -->
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 
 <!-- ======================= HEADER ======================= -->
 <header class="sticky top-0 z-40 backdrop-blur-xl bg-white/92 border-b border-[#E8DDD0] shadow-[0_4px_24px_rgba(92,59,111,0.06)]">
@@ -753,32 +751,20 @@ src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
   <i data-lucide="message-circle" class="w-6 h-6"></i>
 </a>
 
-
 <script>
 /* ============================================================================
-   CONFIG — Editá acá los datos que se repiten en toda la página
+   CONFIG — Datos que se repiten en toda la página
    ============================================================================ */
 const CONFIG = {
-  // Número de WhatsApp SIN espacios ni signos, con código de país (54 9 + código de área sin el 0 + número sin el 15)
   whatsappNumber: "5492613896838",
-
-  // Mensaje que se prearma cuando alguien toca "WhatsApp" sin haber llenado el formulario
   whatsappMensajeGenerico: "Hola! Quiero info sobre los lotes de Barrio Cepas de Junín - Carril del Centro",
-
-  // A dónde se envían los datos del formulario. Reemplazá por tu endpoint real
-  formEndpoint: "https://script.google.com/macros/s/AKfycbzn30KKr9X60yf-fciZ-hKojaiMt9U7LxqTD13WDiqByEvD3WGJyT13RHql4-Jureao5Q/exec",
-
-  // Meta Pixel ID de tu cuenta de Meta Ads (Administrador de eventos).
-  metaPixelId: "2583492122069724"
+  formEndpoint: "https://script.google.com/macros/s/AKfycbzn30KKr9X60yf-fciZ-hKojaiMt9U7LxqTD13WDiqByEvD3WGJyT13RHql4-Jureao5Q/exec"
 };
 
-/* ============================================================================
-   Lógica de la página
-   ============================================================================ */
 lucide.createIcons();
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Arma el link de WhatsApp genérico y lo aplica a todos los botones "WhatsApp"
+// Arma el link de WhatsApp genérico
 function buildWspLink(mensaje){
   return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(mensaje);
 }
@@ -786,7 +772,7 @@ document.querySelectorAll('.wsp-link').forEach(a => {
   a.href = buildWspLink(CONFIG.whatsappMensajeGenerico);
 });
 
-// Botones "Quiero conocer / Consultar" que llevan al formulario con scroll suave
+// Botones con scroll suave
 const formAnchor = document.getElementById('formAnchor');
 const formCard = document.getElementById('formCard');
 const scrollToast = document.getElementById('scrollToast');
@@ -805,7 +791,7 @@ document.querySelectorAll('[data-scroll-form]').forEach(btn => {
   });
 });
 
-// Captura de parámetros de la URL (UTMs y fbclid) que llegan desde el anuncio de Meta
+// Captura de UTMs y fbclid
 (function captureUtms(){
   const params = new URLSearchParams(window.location.search);
   const map = {
@@ -821,16 +807,15 @@ document.querySelectorAll('[data-scroll-form]').forEach(btn => {
   });
 })();
 
-// Variables de los contenedores
 const leadForm = document.getElementById('leadForm');
 const step2Box = document.getElementById('step2Box');
 const qualifyForm = document.getElementById('qualifyForm');
 const thanksBox = document.getElementById('thanksBox');
 const skipBtn = document.getElementById('skipBtn');
 
-let currentLeadData = {}; // Guardado temporal de Nombre y WhatsApp
+let currentLeadData = {};
 
-// --- PASO 1: Captura inicial ---
+// PASO 1: Captura e invocación del evento Lead
 leadForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   
@@ -842,12 +827,10 @@ leadForm.addEventListener('submit', async (e) => {
   btn1.disabled = true;
   btn1.innerHTML = 'Procesando...';
 
-  // Guardamos datos
   const formData = new FormData(leadForm);
   currentLeadData = Object.fromEntries(formData.entries());
   currentLeadData.fase = "Paso 1 - Inicial";
 
-  // 1) Enviar de fondo el Paso 1 al webhook (Google Sheets / Make)
   if (CONFIG.formEndpoint) {
     fetch(CONFIG.formEndpoint, {
       method: 'POST',
@@ -857,28 +840,25 @@ leadForm.addEventListener('submit', async (e) => {
     }).catch(console.error); 
   }
 
-  // Evento de Meta Pixel
-  if (typeof fbq === 'function') {
-    fbq('track', 'Lead', { content_name: 'Paso 1 Capturado' });
+  // Se dispara el evento de Lead directamente
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Lead', { content_name: 'Paso 1 Capturado' });
   }
 
-  // 2) Transición visual al Paso 2
   leadForm.classList.add('hidden');
   step2Box.classList.remove('hidden');
   lucide.createIcons();
 });
 
-// --- FUNCIÓN CENTRAL: Terminar y abrir WhatsApp ---
+// PASO 2: Invocación de CompleteRegistration
 function finalizarFlujo(datosCalificacion = {}) {
   step2Box.classList.add('hidden');
   thanksBox.classList.remove('hidden');
 
-  // Evento de Meta Pixel al completar el flujo (calificación final)
-  if (typeof fbq === 'function') {
-    fbq('track', 'CompleteRegistration', { content_name: 'Flujo Calificado' });
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'CompleteRegistration', { content_name: 'Flujo Calificado' });
   }
 
-  // Si completó el paso 2, enviamos la actualización
   if (Object.keys(datosCalificacion).length > 0 && CONFIG.formEndpoint) {
     const finalData = { ...currentLeadData, ...datosCalificacion, fase: "Paso 2 - Calificado" };
     fetch(CONFIG.formEndpoint, {
@@ -889,7 +869,6 @@ function finalizarFlujo(datosCalificacion = {}) {
     }).catch(console.error);
   }
 
-  // Armar el mensaje para enviarlo por WhatsApp
   let mensajeWsp = `Hola! Soy ${currentLeadData.nombre}. Mi WhatsApp es ${currentLeadData.whatsapp}. Quiero info sobre los lotes de Cepas de Junín.`;
   
   if (datosCalificacion.plazo && datosCalificacion.plazo !== "No definido") {
@@ -905,7 +884,6 @@ function finalizarFlujo(datosCalificacion = {}) {
   setTimeout(() => { window.open(wspUrl, '_blank'); }, 500);
 }
 
-// --- PASO 2: Envío de respuestas ---
 qualifyForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const btn2 = document.getElementById('submitBtn2');
@@ -916,13 +894,12 @@ qualifyForm.addEventListener('submit', (e) => {
   finalizarFlujo(califData);
 });
 
-// --- PASO 2: Saltar (Skip) ---
 skipBtn.addEventListener('click', () => {
   skipBtn.textContent = 'Redirigiendo...';
   finalizarFlujo();
 });
 
-// Acordeón de preguntas frecuentes
+// FAQ
 document.querySelectorAll('.faq-item').forEach(item => {
   const toggle = item.querySelector('.faq-toggle');
   const answer = item.querySelector('.faq-answer');
@@ -941,7 +918,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// Galería / lightbox
+// Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 document.querySelectorAll('.gallery-item').forEach(item => {
