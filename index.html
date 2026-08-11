@@ -243,12 +243,28 @@ function buildWspLink(mensaje){
   });
 })();
 
+// Función optimizada para enviar a Google Sheets sin bloqueos CORS
+function enviarAGoogleSheets(dataObj) {
+  if (!CONFIG.formEndpoint) return;
+
+  const payload = new URLSearchParams(dataObj);
+
+  fetch(CONFIG.formEndpoint, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: payload.toString()
+  }).catch(err => console.error("Error al enviar a Sheets:", err));
+}
+
 const leadForm = document.getElementById('leadForm');
 const step2Box = document.getElementById('step2Box');
 const qualifyForm = document.getElementById('qualifyForm');
 let currentLeadData = {};
 
-// PASO 1: Captura e invocación del evento Lead
+// PASO 1: Captura inicial y envío a Sheets
 leadForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const nombre = document.getElementById('fNombre').value.trim();
@@ -263,17 +279,10 @@ leadForm.addEventListener('submit', async (e) => {
   currentLeadData = Object.fromEntries(formData.entries());
   currentLeadData.fase = "Paso 1 - Inicial";
 
-  // Enviar datos iniciales a Google Sheets
-  if (CONFIG.formEndpoint) {
-    fetch(CONFIG.formEndpoint, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(currentLeadData)
-    }).catch(console.error); 
-  }
+  // Enviar a Google Sheets
+  enviarAGoogleSheets(currentLeadData);
 
-  // Disparar evento de Lead
+  // Pixel de Meta
   if (typeof window.fbq === 'function') {
     window.fbq('track', 'Lead', { content_name: 'Paso 1 Capturado' });
   }
@@ -293,20 +302,13 @@ qualifyForm.addEventListener('submit', (e) => {
   const califData = Object.fromEntries(new FormData(qualifyForm).entries());
   const finalData = { ...currentLeadData, ...califData, fase: "Paso 2 - Calificado" };
 
-  // Enviar a Google Sheets
-  if (CONFIG.formEndpoint) {
-    fetch(CONFIG.formEndpoint, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(finalData)
-    }).catch(console.error);
-  }
+  // Enviar datos actualizados a Google Sheets
+  enviarAGoogleSheets(finalData);
 
-  // Guardar en sessionStorage para ser consumido en la Thank You Page
+  // Guardar en sessionStorage para consumo en thank-you.html
   sessionStorage.setItem('leadData', JSON.stringify(finalData));
 
-  // Redirigir a la Thank You Page
+  // Redirigir a la página de agradecimiento
   window.location.href = "thank-you.html";
 });
 </script>
