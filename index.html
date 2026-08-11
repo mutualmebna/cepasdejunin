@@ -157,7 +157,7 @@ src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
             <h4 class="font-serif text-[22px] leading-tight text-[#2D3A2E]">¡Casi listo!</h4>
             <p class="mt-1 text-[13px] text-[#8C7D6C]">Completá estas consultas rápidas para enviarte la propuesta personalizada.</p>
           </div>
-          
+
           <form id="qualifyForm" class="grid gap-3.5">
             <!-- PREGUNTA FILTRO 1: Residencia -->
             <label class="grid gap-1">
@@ -180,7 +180,7 @@ src="https://www.facebook.com/tr?id=2583492122069724&ev=PageView&noscript=1"
                 <option value="Solo explorando opciones">Solo explorando opciones</option>
               </select>
             </label>
-            
+
             <!-- PREGUNTA FILTRO 3: Pago -->
             <label class="grid gap-1">
               <span class="text-[11px] tracking-wide uppercase text-[#8C7D6C]">Modalidad de Pago</span>
@@ -232,6 +232,11 @@ lucide.createIcons();
 function buildWspLink(mensaje){
   return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(mensaje);
 }
+
+// Asignar el link real de WhatsApp a todos los botones .wsp-link (antes quedaban en href="#")
+document.querySelectorAll('.wsp-link').forEach(function(el){
+  el.href = buildWspLink(CONFIG.whatsappMensajeGenerico);
+});
 
 // Captura de UTMs
 (function captureUtms(){
@@ -298,7 +303,7 @@ qualifyForm.addEventListener('submit', (e) => {
   const btn2 = document.getElementById('submitBtn2');
   btn2.disabled = true;
   btn2.innerHTML = 'Guardando...';
-  
+
   const califData = Object.fromEntries(new FormData(qualifyForm).entries());
   const finalData = { ...currentLeadData, ...califData, fase: "Paso 2 - Calificado" };
 
